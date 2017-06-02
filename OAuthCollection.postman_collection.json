@@ -1,0 +1,141 @@
+{
+	"id": "328cd409-6b39-423e-bd64-45c0f8d330a5",
+	"name": "OAuthCollection",
+	"description": "",
+	"order": [
+		"12a8c1a2-f7c2-865d-e3d5-41ad9816194c",
+		"98b19f20-f447-d337-1e2b-2be79e3c1c5a",
+		"216b9ca3-0e78-2418-9a41-23901cc21ec7",
+		"cedc107b-ce76-69f7-3987-6c0839a25ab5",
+		"86a629cc-8cd3-0be8-7881-1248c3e57f48"
+	],
+	"folders": [],
+	"timestamp": 1495822546933,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "12a8c1a2-f7c2-865d-e3d5-41ad9816194c",
+			"headers": "Content-type: application/x-www-form-urlencoded; charset=utf-8\nAuthorization: Basic ZnZTZWN1cmVkOnZhdWx0LTIzNDItc2Rmc2Y=\n",
+			"url": "localhost:9595/oauth/token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "abc@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "aswellas",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "fvSecured",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1496015173361,
+			"name": "Generate new token",
+			"description": "",
+			"collectionId": "328cd409-6b39-423e-bd64-45c0f8d330a5",
+			"responses": []
+		},
+		{
+			"id": "216b9ca3-0e78-2418-9a41-23901cc21ec7",
+			"headers": "",
+			"url": "localhost:9595/oauth/token/revokeById/9bffb63c-074f-45ba-a840-881b7c93a7ec",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "328cd409-6b39-423e-bd64-45c0f8d330a5",
+			"data": null,
+			"dataMode": "params",
+			"name": "Logout accessToken",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1495822591695,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "86a629cc-8cd3-0be8-7881-1248c3e57f48",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer 54fdd726-edc1-4ac8-99c0-8af5340706b9\n",
+			"url": "localhost:9595/api/v1/administrators/createClientDetails",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495911578318,
+			"name": "createClientDetails",
+			"description": "",
+			"collectionId": "328cd409-6b39-423e-bd64-45c0f8d330a5",
+			"responses": [],
+			"rawModeData": "{\n\t\"clientId\" : \"fvSecured\",\n\t\"clientSecret\" : \"vault-2342-sdfsf\",\n\t\"scope\": \"read,write,edit,delete\",\n\t\"authorizedGrantTypes\": \"password,authorization_code,refresh_token\",\n\t\"accessTokenValidity\": 2000,\n\t\"refreshTokenValidity\": 2000,\n\t\"autoApprove\": 1\n}"
+		},
+		{
+			"id": "98b19f20-f447-d337-1e2b-2be79e3c1c5a",
+			"headers": "Content-type: application/x-www-form-urlencoded; charset=utf-8\nAuthorization: Bearer e987d764-6968-4c04-92db-58ea9bfb62c8\n",
+			"url": "localhost:9595/api/v1/audit?offset=1&limit=10&fromDate=10/10/2014&toDate=10/10/2014&query=54",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "328cd409-6b39-423e-bd64-45c0f8d330a5",
+			"data": null,
+			"dataMode": "params",
+			"name": "Sample url access",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1495822570476,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "cedc107b-ce76-69f7-3987-6c0839a25ab5",
+			"headers": "",
+			"url": "localhost:9595/tokens/revokeRefreshToken/5ee01846-ca9c-48fa-a44b-62958e9b33a3",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "328cd409-6b39-423e-bd64-45c0f8d330a5",
+			"data": null,
+			"dataMode": "params",
+			"name": "Logout refresh token",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1495822606009,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
