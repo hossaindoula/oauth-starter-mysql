@@ -15,12 +15,11 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Table
 @Entity
-public class Book {
+public class Post {
 
     @Id
-    private String isn;
+    private String id;
     private String title;
-    private String publisher;
-    private String[] authors;
-    private String publishedDate;
+    private String category;
+    private String authorId;
 }
